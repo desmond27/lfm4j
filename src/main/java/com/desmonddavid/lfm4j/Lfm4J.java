@@ -15,7 +15,7 @@ public class Lfm4J {
     private static String apiKey;
     private static String apiSecret;
     private static ClientType clientType;
-    private static HttpClient httpClient;
+    //private static HttpClient httpClient;
 
     private static Lfm4J instance;
 
@@ -28,7 +28,7 @@ public class Lfm4J {
         Lfm4J.clientType = clientType;
 
         // Initialize OkHttp as the default HTTP client
-        httpClient = new OkHttpClient();
+        //httpClient = new OkHttpClient();
     }
 
     public static String getApiKey() {
