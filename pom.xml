@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <name>Lfm4J</name>
     <description>Java wrapper for the Last.fm API</description>
-    <groupId>com.desmondavid</groupId>
+    <groupId>com.desmonddavid</groupId>
     <artifactId>lfm4j</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>4.9.0</version>
+            <version>4.0.1</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
