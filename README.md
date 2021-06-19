@@ -1,4 +1,6 @@
 # LFm4J
+[![Build Status](https://travis-ci.com/desmond27/lfm4j.svg?branch=master)](https://travis-ci.com/desmond27/lfm4j)
+
 Java wrapper for LastFM's API
 
 This project aims to provide a simple yet powerful Java based library that interfaces with the LastFM API for integrating your own applications with LastFM.
