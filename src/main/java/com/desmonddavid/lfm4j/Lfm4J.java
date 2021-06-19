@@ -1,8 +1,6 @@
 package com.desmonddavid.lfm4j;
 
 import com.desmonddavid.lfm4j.common.utils.ClientType;
-import com.desmonddavid.lfm4j.common.utils.httpclient.HttpClient;
-import com.desmonddavid.lfm4j.common.utils.httpclient.OkHttpClient;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -19,6 +17,14 @@ public class Lfm4J {
 
     private static Lfm4J instance;
 
+    /**
+     * Initialize the library with the API key and API secret obtained from the last.fm website.<br /><br />
+     * You must obtain your own API key and secret by creating an API account <a href="https://www.last.fm/api/account/create">here</a>.
+     *
+     * @param apiKey The API key obtained after creating an API account in last.fm.
+     * @param apiSecret The API secret obtained after crating an API account in last.fm.
+     * @param clientType An enum with values WEB, DESKTOP and MOBILE. Used for authenticating users for web, desktop or mobile respectively. Currently only desktop works.
+     */
     public static void init(String apiKey, String apiSecret, ClientType clientType) {
 
         log.info("Initializing LastFm4J for client type: "+clientType.name());

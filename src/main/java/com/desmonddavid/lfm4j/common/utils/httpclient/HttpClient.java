@@ -6,5 +6,5 @@ public interface HttpClient {
 
     <T> T makeGetRequest(Map<String, String> queryParameters, Class<T> tClass);
 
-    <T> T makePostRequest(Map<String, String> getParameters, Class<T> tClass);
+    <T> T makePostRequest(Map<String, String> parameters, Class<T> tClass);
 }
