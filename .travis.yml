@@ -1,1 +1,8 @@
 language: java
+jdk: openjdk11
+jobs:
+  include:
+    - before_script:
+        - sed -i s/lastfm\.apiKey=/lastfm\.apiKey=$TEST_LAST_FM_API_KEY/g src/test/resources/lastfm.properties
+        - sed -i s/lastfm\.apiKey=/lastfm\.apiSecret=$TEST_LAST_FM_API_SECRET/g src/test/resources/lastfm.properties
+        - sed -i s/lastfm\.user=/lastfm\.apiKey=$TEST_LAST_FM_USER/g src/test/resources/lastfm.properties
