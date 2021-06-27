@@ -12,11 +12,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
 @ToString
 public class Track {
+
+    @JsonProperty("@attr")
+    Map<String, Object> attributes;
+
     private String name;
     private String mbid;
     private String url;
