@@ -21,7 +21,6 @@ public class LfmUserServiceTests {
     @Test
     public void testGetUserInfo() {
         User userInfo = LfmUserService.getInfo(TestUtils.USERNAME);
-        log.debug("User info returned: "+userInfo.toString());
         Assertions.assertNotNull(userInfo);
         Assertions.assertEquals("Des27", userInfo.getName());
     }
@@ -29,7 +28,6 @@ public class LfmUserServiceTests {
     @Test
     public void testGetUserRecentTracksForUserNameOnly() {
         RecentTracks recentTracks = LfmUserService.getRecentTracks(TestUtils.USERNAME);
-        log.debug("Recent tracks returned: "+recentTracks.toString());
         Assertions.assertNotNull(recentTracks);
         Assertions.assertEquals(50, recentTracks.getTracks().size());
     }
@@ -37,7 +35,6 @@ public class LfmUserServiceTests {
     @Test
     public void testGetUserRecentTracksWithLimits() {
         RecentTracks recentTracks = LfmUserService.getRecentTracks(TestUtils.USERNAME, 1, 5, null, null, false);
-        log.debug("Recent tracks returned: "+recentTracks.toString());
         Assertions.assertNotNull(recentTracks);
         Assertions.assertEquals(5, recentTracks.getTracks().size());
     }
