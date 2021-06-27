@@ -20,7 +20,6 @@ public class AuthServiceTests {
     @Test
     public void testGetToken() {
         Token token = AuthService.getToken();
-        log.debug("Received token: "+token.getToken());
         Assertions.assertNotNull(token);
     }
 }
