@@ -15,6 +15,12 @@ public class LfmUserService {
 
     private static final HttpClient client = new OkHttpClient();
 
+    /**
+     * Gets the information of the user identified by the given username.<br /><br />
+     * <a href="https://www.last.fm/api/show/user.getInfo">More info in the Last FM API documentation.</a>
+     * @param user A user's username as String.
+     * @return An object of type {@link User} containing the user's information.
+     */
     public static User getInfo(String user) {
         Map<String, String> queryParameters = new HashMap<>();
         queryParameters.put("method", "user.getInfo");
@@ -24,10 +30,30 @@ public class LfmUserService {
         return client.makeGetRequest(queryParameters, User.class);
     }
 
+    /**
+     * Gets recent tracks played by the user identified by the given username. Fetches all recently played tracks by default limited to 50 entries.<br /><br />
+     * <a href="https://www.last.fm/api/show/user.getRecentTracks">More info in the Last FM API documentation.</a>
+     * @param user A user's username as String.
+     * @return An object of type {@link RecentTracks} containing the user's recently played tracks.
+     */
     public static RecentTracks getRecentTracks(String user) {
         return getRecentTracks(user, null, null, null, null, null);
     }
 
+    /**
+     * Gets recent tracks played by the user identified by the given username and <br /><br />
+     * <a href="https://www.last.fm/api/show/user.getRecentTracks">More info in the Last FM API documentation.</a>
+     * @param user A user's username as String.
+     * @param page (Optional) The page number of the list to fetch. Defaults to 1.
+     * @param limit (Optional) The number of entries of the list to be returned per page. Defaults to 50. Maximum value 200.
+     * @param from (Optional) Beginning timestamp of the date range in UNIX timestamp format (seconds). The response
+     *             will have scrobbles after this time.
+     * @param to (Optional) End timestamp of the date range in UNIX timestamp format (seconds). The response will have
+     *           scrobbles before this time.
+     * @param extended (Optional) If set to true will return additional inforamtion with each scrobble including
+     *                 extended artist data and whether the user has loved the track or not.
+     * @return An object of type {@link RecentTracks} containing the user's recently played tracks.
+     */
     public static RecentTracks getRecentTracks(@NotNull String user, @Nullable Integer page, @Nullable Integer limit,
                                                @Nullable Integer from, @Nullable Integer to, @Nullable Boolean extended) {
         Map<String, String> queryParameters = new HashMap<>();
@@ -48,5 +74,4 @@ public class LfmUserService {
 
         return client.makeGetRequest(queryParameters, RecentTracks.class);
     }
-
 }

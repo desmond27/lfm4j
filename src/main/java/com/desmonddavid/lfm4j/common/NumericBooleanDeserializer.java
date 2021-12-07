@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import java.io.IOException;
 
+/**
+ * Deserializes numeric values to boolean. That is 0 becomes false and 1 becomes true. Any other numeric value results in null.
+ */
 public class NumericBooleanDeserializer extends JsonDeserializer<Boolean> {
 
     @Override

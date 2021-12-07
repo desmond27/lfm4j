@@ -21,7 +21,7 @@ public class OkHttpClient implements HttpClient {
     /**
      * Makes a GET request to the Last FM API with the given query parameters and deserializes the response into an of the type of the given class.
      * @param queryParameters Query parameters
-     * @param tClass The model class which type of object is to be returned.
+     * @param tClass The model class whose type of object is to be returned.
      * @param <T> The type of the response
      * @return A model object containing the response.
      */
@@ -68,7 +68,7 @@ public class OkHttpClient implements HttpClient {
     /**
      * [NOT TESTED] Makes a POST request to the Last FM API with the given query parameters and deserializes the response into an of the type of the given class.
      * @param parameters The parameters to be sent to the Last FM API as a POST request.
-     * @param tClass The model class which type of object is to be returned.
+     * @param tClass The model class whose type of object is to be returned.
      * @param <T> The type of the response
      * @return A model object containing the response.
      */

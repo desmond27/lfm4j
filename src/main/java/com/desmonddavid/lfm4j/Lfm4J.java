@@ -23,7 +23,7 @@ public class Lfm4J {
      *
      * @param apiKey The API key obtained after creating an API account in last.fm.
      * @param apiSecret The API secret obtained after crating an API account in last.fm.
-     * @param clientType An enum with values WEB, DESKTOP and MOBILE. Used for authenticating users for web, desktop or mobile respectively. Currently only desktop works.
+     * @param clientType An enum with values WEB, DESKTOP and MOBILE. Used for authenticating users for web, desktop or mobile respectively. Currently, only desktop works.
      */
     public static void init(String apiKey, String apiSecret, ClientType clientType) {
 
