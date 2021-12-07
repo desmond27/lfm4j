@@ -3,15 +3,11 @@ package com.desmonddavid.lfm4j.user.response.recentTracks;
 import com.desmonddavid.lfm4j.common.response.Attributes;
 import com.desmonddavid.lfm4j.track.response.Track;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class RecentTracks {
     @JsonProperty("@attr")
     private Attributes attributes;
