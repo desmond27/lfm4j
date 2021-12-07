@@ -12,11 +12,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
 @ToString
 public class Artist {
+
+    @JsonProperty("@attr")
+    private Map<String, Object> attributes;
+
     private String name;
     private String mbid;
     private String url;
@@ -41,6 +46,8 @@ public class Artist {
 
     @JsonProperty("#text")
     private String text;
+
+    private Integer playcount;
 
 }
 

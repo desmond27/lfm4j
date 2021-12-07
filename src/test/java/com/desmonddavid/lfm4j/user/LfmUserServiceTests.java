@@ -4,6 +4,7 @@ import com.desmonddavid.lfm4j.Lfm4J;
 import com.desmonddavid.lfm4j.TestUtils;
 import com.desmonddavid.lfm4j.common.utils.ClientType;
 import com.desmonddavid.lfm4j.user.response.recentTracks.RecentTracks;
+import com.desmonddavid.lfm4j.user.response.topArtists.TopArtists;
 import com.desmonddavid.lfm4j.user.response.userInfo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -51,5 +52,25 @@ public class LfmUserServiceTests {
 
         // If the user has a track currently playing, the count returned is always one greater than the limit.
         Assertions.assertTrue(recentTracks.getTracks().size() == 5 || recentTracks.getTracks().size() == 6);
+    }
+
+    /**
+     * Prerequisite: The test user must have greater than zero top artists for this test to pass.
+     */
+    @Test
+    public void testGetUserTopArtistsWithUserNameOnly() {
+        TopArtists topArtists = LfmUserService.getTopArtists(TestUtils.USERNAME);
+        Assertions.assertNotNull(topArtists);
+        Assertions.assertTrue(topArtists.getArtists().size() > 0);
+    }
+
+    /**
+     * Prerequisite: The test user must have greater than zero top artists for this test to pass.
+     */
+    @Test
+    public void testGetUserTopArtistsWithLimits() {
+        TopArtists topArtists = LfmUserService.getTopArtists(TestUtils.USERNAME, 1, 5, null);
+        Assertions.assertNotNull(topArtists);
+        Assertions.assertEquals(5, topArtists.getArtists().size());
     }
 }
