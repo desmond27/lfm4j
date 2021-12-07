@@ -1,5 +1,5 @@
 # LFm4J
-[![Build Status](https://travis-ci.com/desmond27/lfm4j.svg?branch=master)](https://travis-ci.com/desmond27/lfm4j)
+[![Build Status](https://app.travis-ci.com/desmond27/lfm4j.svg?branch=master)](https://app.travis-ci.com/desmond27/lfm4j)
 
 Java wrapper for LastFM's API
 
@@ -16,6 +16,7 @@ The following services currently work:
 
 - user.getInfo
 - user.getRecentTracks
+- user.getTopArtists
 
 ## What doesn't work
 
