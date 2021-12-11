@@ -29,8 +29,7 @@ public class Track {
     private int listeners;
     private int playcount;
 
-    @JsonDeserialize(using = NumericBooleanDeserializer.class)
-    private Boolean streamable;
+    private Map<String, Object> streamable;
 
     private Artist artist;
     private Album album;
