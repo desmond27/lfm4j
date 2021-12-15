@@ -1,6 +1,5 @@
 package com.desmonddavid.lfm4j.user.response.topTracks;
 
-import com.desmonddavid.lfm4j.track.response.Track;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 

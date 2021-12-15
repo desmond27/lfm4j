@@ -1,12 +1,10 @@
-package com.desmonddavid.lfm4j.track.response;
+package com.desmonddavid.lfm4j.user.response.topTracks;
 
 import com.desmonddavid.lfm4j.album.response.Album;
 import com.desmonddavid.lfm4j.artist.response.Artist;
-import com.desmonddavid.lfm4j.common.NumericBooleanDeserializer;
 import com.desmonddavid.lfm4j.common.response.Date;
 import com.desmonddavid.lfm4j.common.response.Image;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -29,8 +27,7 @@ public class Track {
     private int listeners;
     private int playcount;
 
-    @JsonDeserialize(using = NumericBooleanDeserializer.class)
-    private Boolean streamable;
+    private Map<String, Object> streamable;
 
     private Artist artist;
     private Album album;
