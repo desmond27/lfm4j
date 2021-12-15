@@ -5,6 +5,7 @@ import com.desmonddavid.lfm4j.TestUtils;
 import com.desmonddavid.lfm4j.common.utils.ClientType;
 import com.desmonddavid.lfm4j.user.response.recentTracks.RecentTracks;
 import com.desmonddavid.lfm4j.user.response.topArtists.TopArtists;
+import com.desmonddavid.lfm4j.user.response.topTracks.TopTracks;
 import com.desmonddavid.lfm4j.user.response.userInfo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -72,5 +73,25 @@ public class LfmUserServiceTests {
         TopArtists topArtists = LfmUserService.getTopArtists(TestUtils.USERNAME, 1, 5, null);
         Assertions.assertNotNull(topArtists);
         Assertions.assertEquals(5, topArtists.getArtists().size());
+    }
+
+    /**
+     * Prerequisite: The test user must have greater than zero top artists for this test to pass.
+     */
+    @Test
+    public void testGetUserTopTracksWithUserNameOnly() {
+        TopTracks topTracks = LfmUserService.getTopTracks(TestUtils.USERNAME);
+        Assertions.assertNotNull(topTracks);
+        Assertions.assertTrue(topTracks.getTracks().size() > 0);
+    }
+
+    /**
+     * Prerequisite: The test user must have greater than zero top artists for this test to pass.
+     */
+    @Test
+    public void testGetUserTopTracksWithLimits() {
+        TopTracks topTracks = LfmUserService.getTopTracks(TestUtils.USERNAME, 1, 5, null);
+        Assertions.assertNotNull(topTracks);
+        Assertions.assertEquals(5, topTracks.getTracks().size());
     }
 }
