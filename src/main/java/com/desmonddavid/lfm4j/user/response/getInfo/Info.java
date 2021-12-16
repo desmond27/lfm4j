@@ -1,4 +1,4 @@
-package com.desmonddavid.lfm4j.user.response.userInfo;
+package com.desmonddavid.lfm4j.user.response.getInfo;
 
 import lombok.Getter;
 import lombok.Setter;

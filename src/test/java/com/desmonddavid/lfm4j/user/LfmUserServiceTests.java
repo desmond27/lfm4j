@@ -6,7 +6,7 @@ import com.desmonddavid.lfm4j.common.utils.ClientType;
 import com.desmonddavid.lfm4j.user.response.recentTracks.RecentTracks;
 import com.desmonddavid.lfm4j.user.response.topArtists.TopArtists;
 import com.desmonddavid.lfm4j.user.response.topTracks.TopTracks;
-import com.desmonddavid.lfm4j.user.response.userInfo.User;
+import com.desmonddavid.lfm4j.user.response.getInfo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;

@@ -9,7 +9,7 @@ import com.desmonddavid.lfm4j.user.response.recentTracks.RecentTracks;
 import com.desmonddavid.lfm4j.user.response.topArtists.Period;
 import com.desmonddavid.lfm4j.user.response.topArtists.TopArtists;
 import com.desmonddavid.lfm4j.user.response.topTracks.TopTracks;
-import com.desmonddavid.lfm4j.user.response.userInfo.User;
+import com.desmonddavid.lfm4j.user.response.getInfo.User;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
