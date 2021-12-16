@@ -1,4 +1,4 @@
-package com.desmonddavid.lfm4j.user.response.userInfo;
+package com.desmonddavid.lfm4j.user.response.getInfo;
 
 import com.desmonddavid.lfm4j.common.response.Image;
 import com.fasterxml.jackson.annotation.JsonProperty;
