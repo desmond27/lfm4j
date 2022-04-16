@@ -7,6 +7,7 @@ import com.desmonddavid.lfm4j.common.response.Tags;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,9 +15,7 @@ import lombok.ToString;
 import java.util.List;
 import java.util.Map;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class Artist {
 
     @JsonProperty("@attr")

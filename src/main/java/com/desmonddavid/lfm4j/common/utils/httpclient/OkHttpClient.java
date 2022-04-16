@@ -34,10 +34,8 @@ public class OkHttpClient implements HttpClient {
 
         Request request = new Request.Builder().url(url).build();
         Call call = client.newCall(request);
-        Response response;
         ObjectMapper objectMapper = Utils.getObjectMapper();
-        try {
-            response = call.execute();
+        try(Response response = call.execute()) {
             if(response.isSuccessful()) {
                 String responseString = response.body().string();
                 log.trace("Received response: "+responseString);

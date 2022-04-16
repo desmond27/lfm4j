@@ -2,15 +2,14 @@ package com.desmonddavid.lfm4j.user.response.getInfo;
 
 import com.desmonddavid.lfm4j.common.response.Image;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class User {
     private String id;
     private String name;
@@ -28,9 +27,7 @@ public class User {
     private String type;
 }
 
-@Getter
-@Setter
-@ToString
+@Data
 class Registered {
     private String unixtime;
     @JsonProperty("#text")
