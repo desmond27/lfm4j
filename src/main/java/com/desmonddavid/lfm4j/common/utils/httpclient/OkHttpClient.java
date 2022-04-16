@@ -40,7 +40,7 @@ public class OkHttpClient implements HttpClient {
             response = call.execute();
             if(response.isSuccessful()) {
                 String responseString = response.body().string();
-                log.debug("Received response: "+responseString);
+                log.trace("Received response: "+responseString);
                 JsonNode jsonNode = objectMapper.readTree(responseString);
                 T responseObject;
                 if(jsonNode.elements().next().elements().hasNext())

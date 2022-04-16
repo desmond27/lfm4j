@@ -20,6 +20,11 @@ public class LfmUserService {
 
     private static final HttpClient client = new OkHttpClient();
 
+    private static final String USER_GET_INFO_METHOD = "user.getInfo";
+    private static final String USER_GET_RECENT_TRACKS_METHOD = "user.getrecenttracks";
+    private static final String USER_GET_TOP_ARTISTS_METHOD = "user.gettopartists";
+    private static final String USER_GET_TOP_TRACKS_METHOD = "user.gettoptracks";
+
     /**
      * Gets the information of the user identified by the given username.<br />
      * <a href="https://www.last.fm/api/show/user.getInfo">More info in the Last FM API documentation.</a>
@@ -28,7 +33,7 @@ public class LfmUserService {
      */
     public static User getInfo(String user) {
         Map<String, String> queryParameters = new HashMap<>();
-        queryParameters.put("method", "user.getInfo");
+        queryParameters.put("method", USER_GET_INFO_METHOD);
         queryParameters.put("user", user);
         queryParameters.put("api_key", Lfm4J.getApiKey());
         queryParameters.put("format", "json");
@@ -62,7 +67,7 @@ public class LfmUserService {
     public static RecentTracks getRecentTracks(@NotNull String user, @Nullable Integer page, @Nullable Integer limit,
                                                @Nullable Integer from, @Nullable Integer to, @Nullable Boolean extended) {
         Map<String, String> queryParameters = new HashMap<>();
-        queryParameters.put("method", "user.getrecenttracks");
+        queryParameters.put("method", USER_GET_RECENT_TRACKS_METHOD);
         queryParameters.put("user", user);
         queryParameters.put("api_key", Lfm4J.getApiKey());
         queryParameters.put("format", "json");
@@ -101,7 +106,7 @@ public class LfmUserService {
      */
     public static TopArtists getTopArtists(@NotNull String user, @Nullable Integer page, @Nullable Integer limit, @Nullable Period period) {
         Map<String, String> queryParameters = new HashMap<>();
-        queryParameters.put("method", "user.gettopartists");
+        queryParameters.put("method", USER_GET_TOP_ARTISTS_METHOD);
         queryParameters.put("user", user);
         queryParameters.put("api_key", Lfm4J.getApiKey());
         queryParameters.put("format", "json");
@@ -135,7 +140,7 @@ public class LfmUserService {
      */
     public static TopTracks getTopTracks(@NotNull String user, @Nullable Integer page, @Nullable Integer limit, @Nullable Period period) {
         Map<String, String> queryParameters = new HashMap<>();
-        queryParameters.put("method", "user.gettoptracks");
+        queryParameters.put("method", USER_GET_TOP_TRACKS_METHOD);
         queryParameters.put("user", user);
         queryParameters.put("api_key", Lfm4J.getApiKey());
         queryParameters.put("format", "json");
