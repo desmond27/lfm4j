@@ -29,6 +29,7 @@ The following services currently work:
 - user.getRecentTracks
 - user.getTopArtists
 - user.getTopTracks
+- user.getTopAlbums
 
 ## What doesn't work
 
