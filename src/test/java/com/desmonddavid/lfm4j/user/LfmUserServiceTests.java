@@ -4,6 +4,7 @@ import com.desmonddavid.lfm4j.Lfm4J;
 import com.desmonddavid.lfm4j.TestUtils;
 import com.desmonddavid.lfm4j.common.utils.ClientType;
 import com.desmonddavid.lfm4j.user.response.recentTracks.RecentTracks;
+import com.desmonddavid.lfm4j.user.response.topAlbums.TopAlbums;
 import com.desmonddavid.lfm4j.user.response.topArtists.TopArtists;
 import com.desmonddavid.lfm4j.user.response.topTracks.TopTracks;
 import com.desmonddavid.lfm4j.user.response.getInfo.User;
@@ -93,5 +94,25 @@ public class LfmUserServiceTests {
         TopTracks topTracks = LfmUserService.getTopTracks(TestUtils.USERNAME, 1, 5, null);
         Assertions.assertNotNull(topTracks);
         Assertions.assertEquals(5, topTracks.getTracks().size());
+    }
+
+    /**
+     * Prerequisite: The test user must have greater than zero top artists for this test to pass.
+     */
+    @Test
+    public void testGetUserTopAlbumsWithUserNameOnly() {
+        TopAlbums topAlbums = LfmUserService.getTopAlbums(TestUtils.USERNAME);
+        Assertions.assertNotNull(topAlbums);
+        Assertions.assertTrue(topAlbums.getAlbums().size()>0);
+    }
+
+    /**
+     * Prerequisite: The test user must have greater than zero top albums for this test to pass.
+     */
+    @Test
+    public void testGetUserTopAlbumsWithLimits() {
+        TopAlbums topAlbums = LfmUserService.getTopAlbums(TestUtils.USERNAME, 1, 5, null);
+        Assertions.assertNotNull(topAlbums);
+        Assertions.assertEquals(5, topAlbums.getAlbums().size());
     }
 }

@@ -34,13 +34,11 @@ public class OkHttpClient implements HttpClient {
 
         Request request = new Request.Builder().url(url).build();
         Call call = client.newCall(request);
-        Response response;
         ObjectMapper objectMapper = Utils.getObjectMapper();
-        try {
-            response = call.execute();
+        try(Response response = call.execute()) {
             if(response.isSuccessful()) {
                 String responseString = response.body().string();
-                log.debug("Received response: "+responseString);
+                log.trace("Received response: "+responseString);
                 JsonNode jsonNode = objectMapper.readTree(responseString);
                 T responseObject;
                 if(jsonNode.elements().next().elements().hasNext())

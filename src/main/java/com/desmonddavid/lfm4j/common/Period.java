@@ -1,4 +1,4 @@
-package com.desmonddavid.lfm4j.user.response.topArtists;
+package com.desmonddavid.lfm4j.common;
 
 public enum Period {
     OVERALL("overall"),
